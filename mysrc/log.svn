@@ -1,0 +1,517 @@
+------------------------------------------------------------------------
+r37 | admin | 2017-09-04 14:55:25 +0800 (周一, 04 9月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/key_srv.c
+
+1 修正进入清洗模式后，直接关机，再开机，提示灯无显示的问题。
+
+------------------------------------------------------------------------
+r36 | admin | 2017-07-27 10:41:10 +0800 (周四, 27 7月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+
+1 改版本号为v11, 去掉风扇等级0
+
+------------------------------------------------------------------------
+r35 | admin | 2017-06-29 10:32:11 +0800 (周四, 29 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 去掉风干模式功能，去掉温湿度功能
+2 版本号为v10 
+
+------------------------------------------------------------------------
+r34 | admin | 2017-06-16 17:34:26 +0800 (周五, 16 6月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+
+出软件v07
+
+------------------------------------------------------------------------
+r33 | admin | 2017-06-15 16:04:13 +0800 (周四, 15 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 风扇等级0，不进入风干模式
+2 版本为v07
+
+------------------------------------------------------------------------
+r32 | admin | 2017-06-13 14:53:19 +0800 (周二, 13 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 开机8分钟才能进入风干模式，以免湿度不稳定，提前进入此模式。
+2 版本号为v06
+
+------------------------------------------------------------------------
+r31 | admin | 2017-06-08 20:29:48 +0800 (周四, 08 6月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/my_main.c
+
+1 小修改，风干模式，出错时置出错标志
+
+------------------------------------------------------------------------
+r30 | admin | 2017-06-08 19:32:44 +0800 (周四, 08 6月 2017) | 4 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 修正风干模式不会检测箱子拔出的问题。
+2 改湿度门限，由77%改为81%,测试两台，一台在92%,一台在95%
+3 改版本号为V05
+
+------------------------------------------------------------------------
+r29 | admin | 2017-06-07 08:40:24 +0800 (周三, 07 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+   M /trunk/mysrc/mytimer.h
+
+1 修正运行时时间与BOOST计时，定时器冲突，导致两个定时都不准的问题。
+2 版本为v04
+
+------------------------------------------------------------------------
+r28 | admin | 2017-06-06 20:53:34 +0800 (周二, 06 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 改湿度门限。
+2 版本V03
+
+------------------------------------------------------------------------
+r27 | admin | 2017-06-06 17:14:23 +0800 (周二, 06 6月 2017) | 5 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 掉电不存风扇等级
+2 出错时闪所有LED灯。
+3 风扇等级的lED指示方法改变。
+4 测试清洗功能，清洗模式时，风速调整不起作用，出错检测不起作用。
+
+------------------------------------------------------------------------
+r26 | admin | 2017-06-06 14:50:48 +0800 (周二, 06 6月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/my_main.c
+
+1 修正bug,上一版本新引入错误。
+
+------------------------------------------------------------------------
+r25 | admin | 2017-06-06 14:40:24 +0800 (周二, 06 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 风速boost模式后，进入风速1
+2 版本为3
+
+------------------------------------------------------------------------
+r24 | admin | 2017-06-06 14:14:46 +0800 (周二, 06 6月 2017) | 4 lines
+Changed paths:
+   M /trunk/Src/main.c
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/my_main.c
+
+1 电流检测门限改为+-50mv
+2 若持续出错2秒才进入保护模式。
+3 代码审查my_main.c做小修改。
+
+------------------------------------------------------------------------
+r23 | admin | 2017-06-06 11:01:06 +0800 (周二, 06 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 加入测试模式，版本号变为02
+2 保护门限放宽+-60mv
+
+------------------------------------------------------------------------
+r22 | admin | 2017-06-06 08:08:19 +0800 (周二, 06 6月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+
+1 boost模式定义为20分钟。
+
+------------------------------------------------------------------------
+r21 | admin | 2017-06-05 20:21:32 +0800 (周一, 05 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 湿度门限改为82% + 1.6*fan_level
+2 出样机测试。
+
+------------------------------------------------------------------------
+r20 | admin | 2017-06-05 17:06:52 +0800 (周一, 05 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/my_main.c
+
+1 修正未读取风扇等级的问题。
+2 改60%的电流门限为300mv，alm电压不检测变化
+
+------------------------------------------------------------------------
+r19 | admin | 2017-06-05 15:40:41 +0800 (周一, 05 6月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+   M /trunk/mysrc/mytimer.h
+
+1 加入 500ms内的历史记录,若alarm电压变化>100mv,或电流检测电压变化>40mv，则认为出错。
+2 若湿度<于65%,则只检测门限最大值，不测最小值，以免提前进入故障模式。
+
+------------------------------------------------------------------------
+r18 | admin | 2017-06-02 12:29:58 +0800 (周五, 02 6月 2017) | 2 lines
+Changed paths:
+   M /trunk/AP368S.ioc
+   M /trunk/mysrc/my_main.c
+   M /trunk/mysrc/mytimer.c
+
+1 加入看门狗，约450ms.
+
+------------------------------------------------------------------------
+r17 | admin | 2017-06-02 09:57:02 +0800 (周五, 02 6月 2017) | 5 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/i2c_base.c
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 将boost闪灯改实现方法为查表。
+2 boost模式时间为90分钟。
+3 drying 时间为 30分钟
+4 上电时，若eeprom,传感器出错，不闪灯。
+
+------------------------------------------------------------------------
+r16 | admin | 2017-05-31 15:13:17 +0800 (周三, 31 5月 2017) | 2 lines
+Changed paths:
+   M /trunk/MDK-ARM/AP368S.uvprojx
+   M /trunk/mysrc/AP368S.h
+
+版本为1.0.2,出试验室样机
+
+------------------------------------------------------------------------
+r15 | admin | 2017-05-31 14:48:52 +0800 (周三, 31 5月 2017) | 5 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 风扇等级2改为电压7v左右。
+2 修正boost模式，开关机未清其计时状态的漏洞
+3 boost模式由90分钟改为4小时，用于试验室测试用。
+4 出试验室测试用样机。
+
+------------------------------------------------------------------------
+r14 | admin | 2017-05-31 10:59:50 +0800 (周三, 31 5月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/my_main.c
+
+1 改新风扇，开同等级电压为5v,8.5v,12v,13.8v
+
+------------------------------------------------------------------------
+r13 | admin | 2017-05-31 09:39:41 +0800 (周三, 31 5月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+
+1 修正风扇boost模式stop_fan无作用的问题，新的CCR值未起作用就已关闭引起
+
+------------------------------------------------------------------------
+r12 | admin | 2017-05-31 08:47:30 +0800 (周三, 31 5月 2017) | 2 lines
+Changed paths:
+   M /trunk/MDK-ARM/AP368S.uvprojx
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 邓工改boost模式
+
+------------------------------------------------------------------------
+r11 | admin | 2017-05-26 16:55:42 +0800 (周五, 26 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 湿度门限改为80%.
+2 风干模式清need_start_fan .
+
+------------------------------------------------------------------------
+r10 | admin | 2017-05-26 16:33:28 +0800 (周五, 26 5月 2017) | 4 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 修正stat_fan 漏洞，参数不起作用。
+2 修正风干模式未等计时时间为0才起动的问题。
+3 湿度门限改为75%。
+
+------------------------------------------------------------------------
+r9 | admin | 2017-05-25 09:34:59 +0800 (周四, 25 5月 2017) | 5 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 风干模式，风速键不起用。
+2 风干模式，出错时，不计运行时间
+3 只有当风扇起动后，才检测湿度，决定是否进入风干模式，以免过早进入，被风扇起动覆盖的问题。
+4 版本号为1.0.1
+
+------------------------------------------------------------------------
+r8 | admin | 2017-05-22 11:04:18 +0800 (周一, 22 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/MDK-ARM/AP368S.uvprojx
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+
+1 修正关机时，风扇键仍有功能的漏洞。
+2 加快LED亮度调整速度
+
+------------------------------------------------------------------------
+r7 | admin | 2017-05-17 11:47:37 +0800 (周三, 17 5月 2017) | 5 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/my_main.c
+   M /trunk/mysrc/mytimer.c
+
+1 上电后，加入300ms延时，等电源稳定
+2 修正led亮度闪问题，PWM数据未用预加载引起。
+3 修正关机时未请风干模式状态的问题。
+4 装机，调试亮度，优化亮度表。
+
+------------------------------------------------------------------------
+r6 | admin | 2017-05-16 15:30:25 +0800 (周二, 16 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/Src/main.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 上电时，串口显示版本号
+2 去掉调试功能。
+
+------------------------------------------------------------------------
+r5 | admin | 2017-05-16 14:56:14 +0800 (周二, 16 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/Src/stm32f1xx_it.c
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/eeprom.c
+   M /trunk/mysrc/eeprom.h
+   M /trunk/mysrc/my_main.c
+
+1 加入eeprom 冗余写入功能，增加可用写入次数。
+2 基本功能正常，电流8.3mA
+
+------------------------------------------------------------------------
+r4 | admin | 2017-05-15 17:30:33 +0800 (周一, 15 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
+   M /trunk/MDK-ARM/AP368S.uvprojx
+   M /trunk/Src/main.c
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/board_AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/key_srv.h
+   M /trunk/mysrc/my_main.c
+   M /trunk/mysrc/mytimer.c
+   M /trunk/mysrc/mytimer.h
+
+1 加入风干模式，清除模式，错误模式。
+2 加入省电。
+
+------------------------------------------------------------------------
+r3 | admin | 2017-05-15 12:28:59 +0800 (周一, 15 5月 2017) | 2 lines
+Changed paths:
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/key_srv.c
+   A /trunk/mysrc/key_srv.h
+   M /trunk/mysrc/my_main.c
+   M /trunk/mysrc/myboard.h
+
+完善
+
+------------------------------------------------------------------------
+r2 | admin | 2017-05-12 17:24:58 +0800 (周五, 12 5月 2017) | 2 lines
+Changed paths:
+   A /trunk
+   A /trunk/AP368S.ioc
+   A /trunk/Drivers
+   A /trunk/Drivers/CMSIS
+   A /trunk/Drivers/CMSIS/Device
+   A /trunk/Drivers/CMSIS/Device/ST
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/arm
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/arm/startup_stm32f103xb.s
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c
+   A /trunk/Drivers/CMSIS/Include
+   A /trunk/Drivers/CMSIS/Include/arm_common_tables.h
+   A /trunk/Drivers/CMSIS/Include/arm_const_structs.h
+   A /trunk/Drivers/CMSIS/Include/cmsis_armcc.h
+   A /trunk/Drivers/CMSIS/Include/cmsis_gcc.h
+   A /trunk/Drivers/CMSIS/Include/core_cm3.h
+   A /trunk/Drivers/CMSIS/Include/core_cmFunc.h
+   A /trunk/Drivers/CMSIS/Include/core_cmInstr.h
+   A /trunk/Drivers/CMSIS/Include/core_cmSimd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cec.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf_template.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_crc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_eth.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_hcd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2s.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_irda.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nand.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nor.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pccard.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_smartcard.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sram.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_wwdg.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_fsmc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cec.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_eth.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_hcd.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2s.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_irda.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_msp_template.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nand.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nor.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pccard.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_smartcard.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sram.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_usart.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_wwdg.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_fsmc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c
+   A /trunk/Inc
+   A /trunk/Inc/mxconstants.h
+   A /trunk/Inc/stm32f1xx_hal_conf.h
+   A /trunk/Inc/stm32f1xx_it.h
+   A /trunk/MDK-ARM
+   A /trunk/MDK-ARM/AP368S.uvprojx
+   A /trunk/MDK-ARM/RTE
+   A /trunk/MDK-ARM/RTE/RTE_Components.h
+   A /trunk/MDK-ARM/startup_stm32f103xb.s
+   A /trunk/Src
+   A /trunk/Src/main.c
+   A /trunk/Src/stm32f1xx_hal_msp.c
+   A /trunk/Src/stm32f1xx_it.c
+   A /trunk/log.c
+   A /trunk/mysrc
+   A /trunk/mysrc/AP368S.c
+   A /trunk/mysrc/AP368S.h
+   A /trunk/mysrc/board_AP368S.h
+   A /trunk/mysrc/circular_buff.c
+   A /trunk/mysrc/circular_buff.h
+   A /trunk/mysrc/common.c
+   A /trunk/mysrc/common.h
+   A /trunk/mysrc/eeprom.c
+   A /trunk/mysrc/eeprom.h
+   A /trunk/mysrc/hdc1080.c
+   A /trunk/mysrc/hdc1080.h
+   A /trunk/mysrc/i2c_base.c
+   A /trunk/mysrc/i2c_base.h
+   A /trunk/mysrc/key_scan.c
+   A /trunk/mysrc/key_scan.h
+   A /trunk/mysrc/key_srv.c
+   A /trunk/mysrc/my_main.c
+   A /trunk/mysrc/myboard.h
+   A /trunk/mysrc/mydefine.h
+   A /trunk/mysrc/mygpio.c
+   A /trunk/mysrc/mygpio.h
+   A /trunk/mysrc/mytimer.c
+   A /trunk/mysrc/mytimer.h
+   A /trunk/mysrc/myuart.c
+   A /trunk/mysrc/myuart.h
+
+第一版，基本功能，无风干模式
+
+------------------------------------------------------------------------

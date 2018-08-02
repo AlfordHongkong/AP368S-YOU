@@ -1,0 +1,219 @@
+------------------------------------------------------------------------
+r24 | admin | 2017-06-06 14:14:46 +0800 (周二, 06 6月 2017) | 4 lines
+Changed paths:
+   M /trunk/Src/main.c
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/my_main.c
+
+1 电流检测门限改为+-50mv
+2 若持续出错2秒才进入保护模式。
+3 代码审查my_main.c做小修改。
+
+------------------------------------------------------------------------
+r6 | admin | 2017-05-16 15:30:25 +0800 (周二, 16 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/Src/main.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/my_main.c
+
+1 上电时，串口显示版本号
+2 去掉调试功能。
+
+------------------------------------------------------------------------
+r5 | admin | 2017-05-16 14:56:14 +0800 (周二, 16 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/Src/stm32f1xx_it.c
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/eeprom.c
+   M /trunk/mysrc/eeprom.h
+   M /trunk/mysrc/my_main.c
+
+1 加入eeprom 冗余写入功能，增加可用写入次数。
+2 基本功能正常，电流8.3mA
+
+------------------------------------------------------------------------
+r4 | admin | 2017-05-15 17:30:33 +0800 (周一, 15 5月 2017) | 3 lines
+Changed paths:
+   M /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
+   M /trunk/MDK-ARM/AP368S.uvprojx
+   M /trunk/Src/main.c
+   M /trunk/mysrc/AP368S.c
+   M /trunk/mysrc/AP368S.h
+   M /trunk/mysrc/board_AP368S.h
+   M /trunk/mysrc/key_srv.c
+   M /trunk/mysrc/key_srv.h
+   M /trunk/mysrc/my_main.c
+   M /trunk/mysrc/mytimer.c
+   M /trunk/mysrc/mytimer.h
+
+1 加入风干模式，清除模式，错误模式。
+2 加入省电。
+
+------------------------------------------------------------------------
+r2 | admin | 2017-05-12 17:24:58 +0800 (周五, 12 5月 2017) | 2 lines
+Changed paths:
+   A /trunk
+   A /trunk/AP368S.ioc
+   A /trunk/Drivers
+   A /trunk/Drivers/CMSIS
+   A /trunk/Drivers/CMSIS/Device
+   A /trunk/Drivers/CMSIS/Device/ST
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/arm
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/arm/startup_stm32f103xb.s
+   A /trunk/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c
+   A /trunk/Drivers/CMSIS/Include
+   A /trunk/Drivers/CMSIS/Include/arm_common_tables.h
+   A /trunk/Drivers/CMSIS/Include/arm_const_structs.h
+   A /trunk/Drivers/CMSIS/Include/cmsis_armcc.h
+   A /trunk/Drivers/CMSIS/Include/cmsis_gcc.h
+   A /trunk/Drivers/CMSIS/Include/core_cm3.h
+   A /trunk/Drivers/CMSIS/Include/core_cmFunc.h
+   A /trunk/Drivers/CMSIS/Include/core_cmInstr.h
+   A /trunk/Drivers/CMSIS/Include/core_cmSimd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cec.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf_template.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_crc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_eth.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_hcd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2s.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_irda.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nand.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nor.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pccard.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_smartcard.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sram.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_wwdg.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_fsmc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cec.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_eth.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_hcd.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2s.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_irda.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_msp_template.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nand.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nor.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pccard.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_smartcard.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sram.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_usart.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_wwdg.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_fsmc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c
+   A /trunk/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c
+   A /trunk/Inc
+   A /trunk/Inc/mxconstants.h
+   A /trunk/Inc/stm32f1xx_hal_conf.h
+   A /trunk/Inc/stm32f1xx_it.h
+   A /trunk/MDK-ARM
+   A /trunk/MDK-ARM/AP368S.uvprojx
+   A /trunk/MDK-ARM/RTE
+   A /trunk/MDK-ARM/RTE/RTE_Components.h
+   A /trunk/MDK-ARM/startup_stm32f103xb.s
+   A /trunk/Src
+   A /trunk/Src/main.c
+   A /trunk/Src/stm32f1xx_hal_msp.c
+   A /trunk/Src/stm32f1xx_it.c
+   A /trunk/log.c
+   A /trunk/mysrc
+   A /trunk/mysrc/AP368S.c
+   A /trunk/mysrc/AP368S.h
+   A /trunk/mysrc/board_AP368S.h
+   A /trunk/mysrc/circular_buff.c
+   A /trunk/mysrc/circular_buff.h
+   A /trunk/mysrc/common.c
+   A /trunk/mysrc/common.h
+   A /trunk/mysrc/eeprom.c
+   A /trunk/mysrc/eeprom.h
+   A /trunk/mysrc/hdc1080.c
+   A /trunk/mysrc/hdc1080.h
+   A /trunk/mysrc/i2c_base.c
+   A /trunk/mysrc/i2c_base.h
+   A /trunk/mysrc/key_scan.c
+   A /trunk/mysrc/key_scan.h
+   A /trunk/mysrc/key_srv.c
+   A /trunk/mysrc/my_main.c
+   A /trunk/mysrc/myboard.h
+   A /trunk/mysrc/mydefine.h
+   A /trunk/mysrc/mygpio.c
+   A /trunk/mysrc/mygpio.h
+   A /trunk/mysrc/mytimer.c
+   A /trunk/mysrc/mytimer.h
+   A /trunk/mysrc/myuart.c
+   A /trunk/mysrc/myuart.h
+
+第一版，基本功能，无风干模式
+
+------------------------------------------------------------------------

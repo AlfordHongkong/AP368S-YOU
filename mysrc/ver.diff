@@ -1,0 +1,32 @@
+Index: AP368S.h
+===================================================================
+--- AP368S.h	(revision 36)
++++ AP368S.h	(working copy)
+@@ -82,7 +82,7 @@
+ #define MAX_RUN_TIME			(6*366)		//366Hour = 10 minutines* 6 * 366 
+ #define DTRING_HUMI_LIMIT		800		// level=3 humi > DTRING_HUMI_LIMIT,then enter dring mode.
+ #define VERSION_H			'1'
+-#define VERSION_L			'1'
++#define VERSION_L			'2'
+     
+ #define	 EEP_TEST_ADDR			0x00
+ #define  EEP_FAN_LV_ADDR		0x10
+Index: key_srv.c
+===================================================================
+--- key_srv.c	(revision 36)
++++ key_srv.c	(working copy)
+@@ -147,13 +147,12 @@
+ //-----------------------------------
+ void power_off(void)
+ {
+-
+-	
+ 	ap368s.is_pwr_on = 0;
+ 	ap368s.has_error = 0;	//clear error status.
+ 	ap368s.is_drying = 0;  //clear drying status.
+ 	ap368s.fan_dry_sec = 0;
+ 	ap368s.fan_start_pending = 0;
++	ap368s.need_clean = 0;
+ 	
+ 	boost_mode_500ms_cnt=0;
+ 	close_hivoltage();
