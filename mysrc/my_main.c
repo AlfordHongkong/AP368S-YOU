@@ -123,7 +123,7 @@ void test_mode(void)
 
 void main_start(void)
 {
-
+	#ifdef ENABLE_WDG
 	//enable WDT
 	IWDG->KR = 0x5555;
 	IWDG->PR = 0;
@@ -131,7 +131,7 @@ void main_start(void)
 	IWDG->RLR = 300;	//timeout = 1.6ms * 300 
 	IWDG->KR = 0xAAAA;	//clear
 	IWDG->KR = 0xCCCC;	//start iwdg	
-
+	#endif
 	int  error = 0;
 	__GPIOB_CLK_ENABLE();
 	__GPIOA_CLK_ENABLE();
@@ -189,11 +189,15 @@ void led_powerup_test(void)
 		toggle_pin(led_tab[i]);
 	}
 }
+
+#define ENABLE_WDG
 //--------------------------------------------
 void my_main(void)
 {
 	key_srv();  // keys service function
+	#ifdef ENABLE_WDG
 	IWDG->KR = 0xAAAA;	//clear
+	#endif
 			/* if the status is poweroff, then go to sleep */
 	if(!is_power_on()){
 		HAL_PWR_EnterSLEEPMode(0,PWR_SLEEPENTRY_WFI);
@@ -216,31 +220,70 @@ void my_main(void)
 	}
 }
 
+
+#define ALARM_ADC_FILTER
 //--------------------------------------------
 void error_check_srv(void)
 {
 
-	static U32 alm_adc_sum,curr_adc_sum;
-	static U32 cnt;
+	static U32 alm_adc_sum,curr_adc_sum,curr_adc_temp;
+	static U32 curr_adc_arr[10];
+	static U32 cnt = 0;
+	static U8 cyc = 0;
 	const U32  error_aver_cnt = 50;	//check per 50ms
-	if(ap368s.has_error == 0 && is_1ms_int(ERR_CHK_TIMER) ){
+	#ifdef ALARM_ADC_FILTER
+	if(ap368s.has_error == 0 && is_10ms_int(ERR_CHK_TIMER) )
+	#else
+	if(ap368s.has_error == 0 && is_1ms_int(ERR_CHK_TIMER) )
+	#endif
+	{
 
 		//when is drying,hivoltage disabled,not check it. 
 		//get current, alarm adc per 10ms.
 		alm_adc_sum += alarm_adc_value();
 		curr_adc_sum += current_adc_value();
+		//curr_adc_arr[cnt] = current_adc_value();
+		
+		if(cnt%5 == 1 ){
+			curr_adc_arr[cyc] = current_adc_value();
+			cyc++;
+			if(cyc >= 10) {
+				cyc = 0;
+			}
+		}
 		cnt++;
-
 		if(cnt < error_aver_cnt){
 			return;
 		} 
 
+		for(U8 i=0; i<10-1; i++){
+			for(U8 j=0; j<10-1-i; j++){
+				if(curr_adc_arr[j] > curr_adc_arr[j+1]){
+					curr_adc_temp = curr_adc_arr[j+1];
+					curr_adc_arr[j+1] = curr_adc_arr[j];
+					curr_adc_arr[j] = curr_adc_temp;
+				}
+			}
+		}
 		alm_volt_mv = 1200*alm_adc_sum/error_aver_cnt/adc_aver_1v2;
+		
+		
+		#ifdef ALARM_ADC_FILTER
+		curr_sensor_volt_mv = 1200*(curr_adc_arr[2]+curr_adc_arr[3]+curr_adc_arr[4]+curr_adc_arr[5]+curr_adc_arr[6]+curr_adc_arr[7])/6/adc_aver_1v2;
+		#else
 		curr_sensor_volt_mv = 1200*curr_adc_sum/error_aver_cnt/adc_aver_1v2;
+		#endif
 		alm_adc_sum = 0;
 		curr_adc_sum = 0;
 		cnt = 0;
-		if(is_50ms_int(ERR_CHK_TIMER)){
+		cyc = 0;
+		
+		#ifdef ALARM_ADC_FILTER
+		if(is_500ms_int(ERR_CHK_TIMER))
+		#else
+		if(is_50ms_int(ERR_CHK_TIMER))
+		#endif
+		{
 			//store history adc data per 50ms
 			history_alm_volt[history_wt_idx%HISTORY_ITEM_NUM] = alm_volt_mv;
 			history_curr_volt[history_wt_idx%HISTORY_ITEM_NUM] = curr_sensor_volt_mv;

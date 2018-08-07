@@ -83,7 +83,7 @@ BOOL get_running_time(U16* run_time);
 #define MAX_RUN_TIME			(6*366)		//366Hour = 10 minutines* 6 * 366 
 #define DTRING_HUMI_LIMIT		800		// level=3 humi > DTRING_HUMI_LIMIT,then enter dring mode.
 #define VERSION_H			'1'
-#define VERSION_L			'4'
+#define VERSION_L			'5'
     
 #define	 EEP_TEST_ADDR			0x00
 #define  EEP_FAN_LV_ADDR		0x10
