@@ -80,7 +80,7 @@ BOOL get_running_time(U16* run_time);
 #define BOOST_KEEP_TIME_x500MS		(2*60*20)  	//boost mode duration, 20 minute.
 #define	POWER_UP_STEADY_WAIT_MS		1200		//power up and wait 1s to check error and start fna..
 
-#define	RUN_TIME_TEST
+//#define	RUN_TIME_TEST
 #ifdef RUN_TIME_TEST
 #define RUN_TIME_RESULATION		(2*10)	//1=0.5 sec,10 seconds
 #else

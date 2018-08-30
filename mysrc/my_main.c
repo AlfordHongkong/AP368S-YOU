@@ -88,8 +88,8 @@ void test_mode(void)
 	write_pin(LED_POWER_PIN, 0);
 	//reset default value.
 	eeprom_lowlevel_init();
-	run_time = 0;
-	//run_time = MAX_RUN_TIME;  // set to test
+	//run_time = 0;
+	run_time = MAX_RUN_TIME;  // set to test
 	store_running_time();
 	ap368s.fan_level = 1;
 	while(get_key_code() == KEY_MODE_CODE)IWDG->KR = 0xAAAA;	//clear	;
