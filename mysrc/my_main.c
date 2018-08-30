@@ -87,8 +87,9 @@ void test_mode(void)
 	//show soft version.
 	write_pin(LED_POWER_PIN, 0);
 	//reset default value.
-	run_time = 0;
 	eeprom_lowlevel_init();
+	run_time = 0;
+	//run_time = MAX_RUN_TIME;  // set to test
 	store_running_time();
 	ap368s.fan_level = 1;
 	while(get_key_code() == KEY_MODE_CODE)IWDG->KR = 0xAAAA;	//clear	;
@@ -155,7 +156,9 @@ void main_start(void)
 	eeprom_init();
 	ap368s.fan_level = 1;	//others are zero.
 			/* 初始化eeprom，失败就报告 */
-	if(!get_running_time(&run_time) && !eeprom_lowlevel_init() && !get_running_time(&run_time) ){
+	if(!get_running_time(&run_time) 
+			&& !eeprom_lowlevel_init() 
+			&& !get_running_time(&run_time) ){
 		run_time = 0;
 		error = 1;
 		uart_send_str(&MYUART2,"eeprom error\r\n");
@@ -207,7 +210,10 @@ void my_main(void)
 	system_srv();
 	light_monitor_srv(); /* detect the environment brightness, and ajust the led brightness */
 	running_time_srv();  /* clean time acc */
+	//#define BLOCK_ALARM
+	#ifndef BLOCK_ALARM
 	error_check_srv();
+	#endif
 	if(is_50ms_int(DBG_TIMER)){
 		//debug info
 		sprintf((char*)temp,"alm=%dmv cur=%dmv li=%.3fv err_cnt=%d ",alm_volt_mv,curr_sensor_volt_mv,

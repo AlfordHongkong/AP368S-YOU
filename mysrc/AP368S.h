@@ -79,7 +79,13 @@ BOOL get_running_time(U16* run_time);
 #define	FAN_KEEP_DRY_MINUTE		30		// 0.3Hour
 #define BOOST_KEEP_TIME_x500MS		(2*60*20)  	//boost mode duration, 20 minute.
 #define	POWER_UP_STEADY_WAIT_MS		1200		//power up and wait 1s to check error and start fna..
+
+#define	RUN_TIME_TEST
+#ifdef RUN_TIME_TEST
+#define RUN_TIME_RESULATION		(2*10)	//1=0.5 sec,10 seconds
+#else
 #define RUN_TIME_RESULATION		(2*60*10)	//1=0.5 sec,10 minutines
+#endif
 #define MAX_RUN_TIME			(6*366)		//366Hour = 10 minutines* 6 * 366 
 #define DTRING_HUMI_LIMIT		800		// level=3 humi > DTRING_HUMI_LIMIT,then enter dring mode.
 #define VERSION_H			'1'
