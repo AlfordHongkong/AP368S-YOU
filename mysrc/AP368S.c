@@ -242,7 +242,11 @@ void exit_clean_mode(void)
 {
 	extern U16 run_time;
 	led.clean = 0;
-	run_time = 0;
+//	#ifdef RUN_TIME_TEST
+//	run_time = (MAX_RUN_TIME -2);
+//	#else
+	run_time = 0;	
+//	#endif
 	store_running_time();	
 	ap368s.need_clean = 0;
 }
@@ -250,16 +254,29 @@ void exit_clean_mode(void)
 //-----------------------------------------
 BOOL get_running_time(U16* run_time)
 {
+
 	//total 3 data byte, 1byte checksum = MSB+LSB+'A';
 	U8 temp[3];
-
-	//read address
-	if(!eeprom_block_read(EEP_RUNTIME_ADDR,temp)){
-		return 0;	//read failed
+		
+			/* implemet 5 times to ensure correction of reading data */
+	for(U8 i=0; i<5; i++){
+			//read address
+		if(eeprom_block_read(EEP_RUNTIME_ADDR,temp)){
+			if(temp[2] == (U8)(temp[0] + temp[1]+'A')){
+				break;  //
+			}
+			else { // checksum error
+					
+			}
+		} else{ //read failed
+		
+		}
+		if (i >= 4) {
+			return 0; // get runnint time failed.
+		}
 	}
-	if(temp[2] != temp[0] + temp[1]+'A'){
-		return 0;	//checksum error
-	}
+	
+	
 	*run_time = (temp[0]<<8) + temp[1];
 	return 1;	
 }

@@ -3,6 +3,9 @@
 #include "eeprom.h"
 #include "ap368s.h"
 
+
+
+
 #define	HISTORY_ITEM_NUM		80
 
 void running_time_srv(void);
@@ -193,7 +196,6 @@ void led_powerup_test(void)
 	}
 }
 
-#define ENABLE_WDG
 //--------------------------------------------
 void my_main(void)
 {
@@ -210,7 +212,6 @@ void my_main(void)
 	system_srv();
 	light_monitor_srv(); /* detect the environment brightness, and ajust the led brightness */
 	running_time_srv();  /* clean time acc */
-	//#define BLOCK_ALARM
 	#ifndef BLOCK_ALARM
 	error_check_srv();
 	#endif
