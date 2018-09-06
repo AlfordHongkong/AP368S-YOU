@@ -86,7 +86,7 @@ BOOL get_running_time(U16* run_time);
 
 
 		/* clean time accumulation test setting*/
-#define	RUN_TIME_TEST
+//#define	RUN_TIME_TEST
 #define ENABLE_WDG
 //#define BLOCK_ALARM
 
@@ -99,7 +99,7 @@ BOOL get_running_time(U16* run_time);
 #endif
 #define DTRING_HUMI_LIMIT		800		// level=3 humi > DTRING_HUMI_LIMIT,then enter dring mode.
 #define VERSION_H			'1'
-#define VERSION_L			'5'
+#define VERSION_L			'6'
     
 #define	 EEP_TEST_ADDR			0x00
 #define  EEP_FAN_LV_ADDR		0x10
